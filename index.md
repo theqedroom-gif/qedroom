@@ -1,10 +1,3 @@
-# Welcome to My Math Notes
+# Welcome to TheQEDRoom's Pinoy Math Note
 
-Free notes, examples and exercises, from high school math to college math.
-
-- **High School Math**: notes organized by grade level.
-- **College Entrance Exam Review**: what to review and practice tests.
-- **College Math**: guides for college math courses.
-- **Math by Discipline**: the full lessons, organized by subject.
-
-Pick a section from the menu to get started.
+Ang site na ito ay ginawa para makatulong sa pag-aaral ng Mathematics. Naglalaman ito ng mga lessons na maaring basahin upang maunawaan ang iba't-ibang concepts sa mathematics. May mga examples din ito na upang maipakita kung paano ginagamit ang mga concepts na ito. Maari namang gamitin ang mga exercises upang masukat ang mastery ng mga skills.
