@@ -4,5 +4,7 @@ Ang site na ito ay ginawa para makatulong sa pag-aaral ng Mathematics. Naglalama
 
 <details class="section">
 <summary>## 🏫 High School Math</summary>
+  
 - [Grade 10](#hs-math/grade-10/index.md)
+
 </details>
