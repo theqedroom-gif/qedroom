@@ -1,3 +1,5 @@
 [
-  { "file": "index.md", "title": "Home" }
+  { "file": "index.md", "title": "Home" },
+
+   { "file": "hs-math/index.md", "title": "High School Math", "parent": "index.md" },
 ]
