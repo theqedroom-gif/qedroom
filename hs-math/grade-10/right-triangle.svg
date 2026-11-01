@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-labelledby="title">
+    <title id="title">Right triangle ABC with the right angle at C, angle theta at A and angle beta at B</title>
+    <!-- The QED Room colors: green #305E35, yellow #EFC30C, gray #333333 -->
+    <defs>
+        <style>
+            .math { font-family: "Cambria Math", "Times New Roman", serif; font-style: italic; }
+        </style>
+    </defs>
+
+    <!-- triangle -->
+    <path d="M80 330 L500 330 L500 90 Z" fill="#F4F7F3" stroke="#305E35" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- angle theta at A -->
+    <path d="M80 330 L140 330 A60 60 0 0 0 132.1 300.2 Z" fill="#EFC30C" fill-opacity=".35"/>
+    <path d="M140 330 A60 60 0 0 0 132.1 300.2" fill="none" stroke="#EFC30C" stroke-width="4"/>
+
+    <!-- angle beta at B -->
+    <path d="M500 90 L500 140 A50 50 0 0 1 456.6 114.8 Z" fill="#EFC30C" fill-opacity=".35"/>
+    <path d="M500 140 A50 50 0 0 1 456.6 114.8" fill="none" stroke="#EFC30C" stroke-width="4"/>
+
+    <!-- right angle at C -->
+    <path d="M472 330 L472 302 L500 302" fill="none" stroke="#305E35" stroke-width="3"/>
+
+    <!-- angle labels -->
+    <text class="math" x="158" y="321" font-size="30" fill="#305E35">θ</text>
+    <text class="math" x="472" y="168" font-size="30" fill="#305E35" text-anchor="middle">β</text>
+
+    <!-- vertex labels -->
+    <text class="math" x="52" y="350" font-size="34" fill="#333333">A</text>
+    <text class="math" x="512" y="82" font-size="34" fill="#333333">B</text>
+    <text class="math" x="514" y="360" font-size="34" fill="#333333">C</text>
+
+    <!-- side labels: each side is named after the opposite vertex -->
+    <text class="math" x="272" y="192" font-size="30" fill="#6d6d6d" text-anchor="middle">c</text>
+    <text class="math" x="526" y="220" font-size="30" fill="#6d6d6d">a</text>
+    <text class="math" x="290" y="368" font-size="30" fill="#6d6d6d" text-anchor="middle">b</text>
+</svg>
