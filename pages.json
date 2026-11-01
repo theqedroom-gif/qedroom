@@ -2,5 +2,7 @@
   { "file": "index.md", "title": "Home" },
 
   { "file": "hs-math/index.md", "title": "High School Math", "parent": "index.md" },
-  { "file": "hs-math/grade-10/index.md", "title": "Grade 10", "parent": "hs-math/index.md" }
+  { "file": "hs-math/grade-10/index.md", "title": "Grade 10", "parent": "hs-math/index.md" },
+
+  { "file": "hs-math/grade-10/ch01/index.md", "title": "Chapter 1", "parent": "hs-math/grade-10/index.md" }
 ]
