@@ -1,3 +1,10 @@
+# Law of Sine
+
+<figure class="diagram">
+<img src="hs-math/grade-10/images/acute-triangle.svg" alt="Right triangle ABC with the right angle at C, angle θ at A and angle β at B">
+<figcaption>Figure 1.2: Acute triangle ABC</figcaption>
+</figure>
+
 <div class="problem-progress">
 <div class="box-label">🧩 Back to the Chapter Problem</div>
 <div class="steps"><span class="now">A</span><span>B</span><span>C</span><span>D</span></div>
