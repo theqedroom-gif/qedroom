@@ -67,6 +67,20 @@
         .definition strong { color: #305E35; }
         .box-label { font-size: 0.8em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #305E35; margin-top: 16px; }
         .box-label::before { content: ""; display: block; width: 48px; height: 3px; margin-bottom: 8px; background: linear-gradient(90deg, #EFC30C, #305E35); }
+
+        /* Chapter problem box (chapter introduction) */
+        .chapter-problem { background: #FFFBEA; border: 2px solid #EFC30C; border-radius: 12px; padding: 4px 26px 12px; margin: 28px 0; box-shadow: 0 3px 0 #EFC30C; }
+        .chapter-problem h3 { color: #305E35; margin: 8px 0 4px; font-size: 1.5em; border: none; }
+        .chapter-problem .box-label { color: #333; }
+        
+        /* Progress box (one part of the chapter problem, solved in each lesson) */
+        .problem-progress { background: #fff; border: 2px dashed #EFC30C; border-radius: 12px; padding: 4px 26px 12px; margin: 36px 0; }
+        .problem-progress .box-label { color: #333; }
+        .steps { display: flex; align-items: center; gap: 6px; margin: 12px 0 2px; }
+        .steps span { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9em; border: 2px solid #EFC30C; color: #333; background: #fff; }
+        .steps span.done { background: #305E35; border-color: #305E35; color: #fff; }
+        .steps span.now { background: #EFC30C; }
+        .next-part { font-size: 0.9em; color: #666; font-style: italic; }
     </style>
 
     <!-- Markdown parser -->
