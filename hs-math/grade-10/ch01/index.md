@@ -9,4 +9,4 @@ Sa basic trigonometry, nalaman natin kung paano kinukuha ang trigonometric ratio
 
 $$\begin{aligned} \sin \theta &= \dfrac{\text{opposite}}{\text{hypothenuse}} &= \dfrac{a}{c} \\\\ \\\\ \cos \theta &= \dfrac{\text{adjacent}}{\text{hypothenuse}} &= \dfrac{b}{c} \\\\ \\\\ \tan \theta &= \dfrac{\text{opposite}}{\text{adjacent}} &= \dfrac{a}{b}\end{aligned}$$
 
-Natutunan din natin kung paano kumuha ng mga angles na lampas pa sa $90 \degree$. Sa chapter na ito, itutuloy natin ang pag-aaral ng trigonometry at susubukan nating i-extend ang mga naunang lessons para magsolve ng oblique triangles. Pero bago tayo magsimula, alamin muna natin kung ano ang oblique triangles.
+Natutunan din natin kung paano kumuha ng mga angles na lampas pa sa $90 \\degree$. Sa chapter na ito, itutuloy natin ang pag-aaral ng trigonometry at susubukan nating i-extend ang mga naunang lessons para magsolve ng oblique triangles. Pero bago tayo magsimula, alamin muna natin kung ano ang oblique triangles.
