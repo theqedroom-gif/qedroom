@@ -5,5 +5,5 @@
   { "file": "hs-math/grade-10/index.md", "title": "Grade 10", "parent": "hs-math/index.md" },
 
   { "file": "hs-math/grade-10/ch01/index.md", "title": "Chapter 1", "parent": "hs-math/grade-10/index.md" },
-  { "file": "hs-math/grade-10/ch01/law-of-sine.md", "title": "Chapter 1.01", "parent": "hs-math/grade-10/index.md" }
+  { "file": "hs-math/grade-10/ch01/law-of-sine.md", "title": "Chapter 1.01", "parent": "hs-math/grade-10/ch01/index.md" }
 ]
