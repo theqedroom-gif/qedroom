@@ -7,4 +7,4 @@ Sa basic trigonometry, nalaman natin kung paano kinukuha ang trigonometric ratio
 <figcaption>Figure 1.1: Right triangle ABC</figcaption>
 </figure>
 
-$$\begin{aligned} \sin \theta &= \dfrac{opposite}{hypothenus} &= \dfrac{a}{c} \\\\ \cos \theta &= \dfrac{adjacent}{hypothenus} &= \dfrac{b}{c} \end{aligned}$$
+$$\begin{aligned} \sin \theta &= \dfrac{opposite}{hypothenus} &= \dfrac{a}{c} \\\\ \\\\ \cos \theta &= \dfrac{adjacent}{hypothenus} &= \dfrac{b}{c} \end{aligned}$$
