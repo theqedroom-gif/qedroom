@@ -18,4 +18,5 @@ A triangle that does not contain any $90^{\circ}$ angle.
 
 </div>
 
-Ibig sabihin, hindi ito isang right triangle. Dahil ang mga trigonometric ratios are na-define natin gamit ang right triangles, hindi natin maaaring gamitin ng basta-basta ang mga ito sa oblique triangles. Dito na papasok ang tinaatawag na Law of sine at ang Law of cosine.
+Ibig sabihin, hindi ito isang right triangle. Dahil ang mga trigonometric ratios are na-define natin gamit ang right triangles, hindi natin maaaring gamitin ng basta-basta ang mga ito sa oblique triangles. Dito na papasok ang tinaatawag na Law of sine at ang Law of cosine. Ito ang magiging focus ng chapter na ito. Una, i-define natin ang Law of sine at Law of cosine. Ipapakita natin kung paano sila ginagamit, at importante sa lahat, kelan sila ginagamit. 
+
