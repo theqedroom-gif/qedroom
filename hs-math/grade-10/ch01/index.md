@@ -20,3 +20,25 @@ A triangle that does not contain any $90^{\circ}$ angle.
 
 Ibig sabihin, hindi ito isang right triangle. Dahil ang mga trigonometric ratios are na-define natin gamit ang right triangles, hindi natin maaaring gamitin ng basta-basta ang mga ito sa oblique triangles. Dito na papasok ang tinaatawag na Law of sine at ang Law of cosine. Ito ang magiging focus ng chapter na ito. Una, i-define natin ang Law of sine at Law of cosine. Ipapakita natin kung paano sila ginagamit, at importante sa lahat, kelan sila ginagamit. 
 
+<div class="chapter-problem">
+<div class="box-label">🧩 Chapter Problem</div>
+
+### Kuya Ben's Island-Hopping Tour
+
+Kuya Ben runs an island-hopping tour from Port P. Before taking tourists out, he must plan the trip carefully.
+
+
+**Part A: The viewpoint on Isla Bato.**
+Isla Bato has a hilltop viewpoint. From his boat, Kuya Ben measures the angle of elevation to the top as $18^{\circ}$. He sails $400 \text{ m}$ straight toward the island and measures again: $30^{\circ}$. How high is the viewpoint above sea level?
+
+**Part B: The lighthouse.**
+A lighthouse on Isla Parola is $9 \text{ km}$ from the port, on a bearing of N $20^{\circ}$ E. Its light can be seen up to $6 \text{ km}$ away. Kuya Ben's first leg goes from the port on a bearing of N $50^{\circ}$ E toward Isla Bato, which is $7 \text{ km}$ away. How far from the port does the boat first come within sight of the light? Is the boat still within range when it reaches Isla Bato?
+
+**Part C: The longest leg.**
+From Isla Bato, the boat goes **5 km** to Isla Puti. The angle between the path from the port and the path to Isla Puti, measured at Isla Bato, is $120^{\circ}$. How far is Isla Puti from the port?
+
+**Part D: The way home.**
+Isla Puti is to the southeast of Isla Bato. On what bearing should Kuya Ben steer from Isla Bato to Isla Puti? And on what bearing should he steer from Isla Puti to return directly to the port? If the boat travels at $20 \text{ km}/\text{h}$, how long is the whole tour on the water?
+
+</div>
+
