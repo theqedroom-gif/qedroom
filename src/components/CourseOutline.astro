@@ -1,0 +1,39 @@
+---
+// The whole grade at a glance: every chapter by period, with the current one open.
+const { grade, chapter, lesson = null } = Astro.props;
+const label = lesson
+  ? `Lesson ${chapter.lessons.findIndex((item) => item.id === lesson.id) + 1} of ${chapter.lessons.length}`
+  : 'All lessons';
+---
+<div class="outline-wrap">
+  <button class="outline-button" type="button" aria-expanded="false" aria-controls="course-outline">
+    <span><strong>{label}</strong> in {chapter.title}</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+
+  <nav class="outline" id="course-outline" aria-label={`${grade.title} lessons`}>
+    {grade.periods.map((period) => (
+      <section class={`period-color-${period.number}`}>
+        <h2 class="outline__period">Period {period.number}</h2>
+        {period.chapters.map((item) => (
+          <details open={item.id === chapter.id}>
+            <summary>{item.title}</summary>
+            <ol>
+              <li>
+                <a href={item.url} aria-current={!lesson && item.id === chapter.id ? 'page' : undefined}>Chapter introduction</a>
+              </li>
+              {item.lessons.map((entry) => (
+                <li>
+                  <a href={entry.url} aria-current={lesson?.id === entry.id ? 'page' : undefined}>
+                    <span>{entry.title}</span>
+                    {!entry.live && <span class="outline__soon">Coming soon</span>}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </details>
+        ))}
+      </section>
+    ))}
+  </nav>
+</div>

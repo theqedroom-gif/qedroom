@@ -1,0 +1,20 @@
+---
+import Tex from './Tex.astro';
+const { chapter, gradeTitle } = Astro.props;
+const total = chapter.lessons.length;
+---
+<a class="card" href={chapter.url}>
+  <div class="card__band"><Tex tex={chapter.formula} display /></div>
+  <div class="card__body">
+    <div class="tags">
+      <span class="tag tag--grade">{gradeTitle} · Period {chapter.period}</span>
+      <span class="tag tag--topic">{chapter.strand}</span>
+    </div>
+    <h3 class="card__title">{chapter.title}</h3>
+    <p class="meta">
+      {chapter.readyCount > 0
+        ? `${chapter.readyCount} of ${total} ${total === 1 ? 'lesson' : 'lessons'} ready`
+        : `${total} ${total === 1 ? 'lesson' : 'lessons'} coming soon`}
+    </p>
+  </div>
+</a>

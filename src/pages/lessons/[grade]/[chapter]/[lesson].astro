@@ -1,0 +1,74 @@
+---
+import { render } from 'astro:content';
+import Base from '../../../../layouts/Base.astro';
+import CourseOutline from '../../../../components/CourseOutline.astro';
+import MathText from '../../../../components/MathText.astro';
+import { getCurriculum } from '../../../../lib/curriculum.js';
+
+export async function getStaticPaths() {
+  const { grades } = await getCurriculum();
+  return grades.flatMap((grade) =>
+    grade.chapters.flatMap((chapter) => {
+      const [, chapterSlug] = chapter.id.split('/');
+      return chapter.lessons.map((lesson, index) => ({
+        params: { grade: grade.id, chapter: chapterSlug, lesson: lesson.slug },
+        props: { grade, chapter, lesson, index },
+      }));
+    }),
+  );
+}
+
+const { grade, chapter, lesson, index } = Astro.props;
+const Content = lesson.entry ? (await render(lesson.entry)).Content : null;
+
+// Next and back carry on across chapters, so students never hit a dead end.
+const position = grade.lessons.findIndex((item) => item.id === lesson.id);
+const next = grade.lessons[position + 1];
+const previous = index > 0 ? chapter.lessons[index - 1] : chapter;
+
+const description = lesson.entry?.data.description ?? `Coming soon: ${lesson.title}, a ${grade.title} math lesson from The QED Room.`;
+---
+<Base title={lesson.title} description={description} noindex={!lesson.live}>
+  <div class="wrap layout">
+    <CourseOutline grade={grade} chapter={chapter} lesson={lesson} />
+    <div class="layout__main">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/lessons/">Lessons</a><span aria-hidden="true">›</span>
+        <a href={grade.url}>{grade.title}</a><span aria-hidden="true">›</span>
+        <a href={chapter.url}>{chapter.title}</a>
+      </nav>
+
+      <article class="prose">
+        <div class="tags">
+          <span class="tag tag--grade">Lesson {index + 1} of {chapter.lessons.length}</span>
+          <span class="tag tag--topic">{chapter.title}</span>
+          {!lesson.live && <span class="tag tag--soon">Coming soon</span>}
+        </div>
+        <h1>{lesson.title}</h1>
+
+        {Content ? (
+          <>
+            {lesson.entry.data.lead && <p class="lead">{lesson.entry.data.lead}</p>}
+            <Content />
+          </>
+        ) : (
+          <>
+            <p class="lead">We're still preparing this lesson.</p>
+            <section class="panel">
+              <div class="panel__label">What you'll learn</div>
+              <p>You will be able to <MathText text={lesson.competencyText} /></p>
+            </section>
+            <div class="callout callout--key">
+              <p><strong>While you wait:</strong> find more math explanations on our <a href="https://www.youtube.com/@TheQEDRoom" rel="noopener">YouTube channel</a>.</p>
+            </div>
+          </>
+        )}
+
+        <div class="pager actions">
+          <a class="btn btn--secondary" href={previous.url}>Back: {previous.title}</a>
+          {next && <a class="btn btn--primary" href={next.url}>Next: {next.title}</a>}
+        </div>
+      </article>
+    </div>
+  </div>
+</Base>

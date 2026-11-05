@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solving quadratics by factoring · The QED Room</title>
+<link rel="stylesheet" href="../tokens.css">
+<!-- KaTeX (same as ../katex-setup.html) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],ignoredTags:['script','style','textarea','input'],throwOnError:false});"></script>
+<style>
+  .wrap { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--space-5); }
+  .site-header { background: var(--qed-green); }
+  .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding-block: var(--space-3); }
+  .site-header img { width: 56px; height: 56px; display: block; }
+  .nav { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+  .nav a { color: var(--qed-white); text-decoration: none; padding: 10px 14px; border-radius: var(--radius-pill); min-height: var(--target-min); box-sizing: border-box; display: inline-flex; align-items: center; }
+  .nav a[aria-current="page"] { background: var(--green-900); }
+
+  .layout { display: flex; flex-wrap: wrap; gap: var(--space-6); padding-block: var(--space-6) var(--space-7); }
+  .lesson-nav { flex: 1 1 240px; display: flex; flex-direction: column; gap: 6px; }
+  .lesson-nav .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-text-muted); padding: 0 12px 6px; }
+  .lesson-nav a { padding: 12px; border-radius: var(--radius-md); text-decoration: none; color: var(--color-text); }
+  .lesson-nav a[aria-current="page"] { background: var(--green-50); color: var(--green-700); font-weight: 500; }
+  article { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: var(--space-5); }
+  article h1 { margin: 0; font: 700 44px/1.1 var(--font-display); }
+  .lead { margin: 0; max-width: 680px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .tag { padding: 4px 10px; border-radius: var(--radius-pill); font: 500 12px var(--font-body); }
+  .tag--grade { background: var(--green-50); color: var(--green-700); }
+  .tag--topic { background: var(--yellow-50); color: var(--yellow-900); }
+
+  .video { aspect-ratio: 16 / 9; border-radius: var(--radius-lg); background: var(--green-300); display: grid; place-items: center; }
+  .play { width: 80px; height: 80px; border: none; border-radius: 50%; background: var(--qed-green); display: grid; place-items: center; cursor: pointer; }
+
+  .panel { background: var(--qed-white); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+  .panel h2 { margin: 0; font-size: 26px; color: var(--color-text); }
+  .working { background: var(--paper); border-radius: var(--radius-md); padding: var(--space-2) var(--space-5) var(--space-4); font-size: 18px; overflow-x: auto; }
+  .answer { display: flex; justify-content: center; }
+  .answer-highlight { background: var(--yellow-50); color: var(--yellow-900); padding: 4px 14px; border-radius: var(--radius-sm); }
+
+  .callout { display: flex; gap: var(--space-3); padding: 14px 16px; border-radius: var(--radius-md); font-size: 15px; line-height: 1.5; }
+  .callout--hint { background: var(--feedback-hint-bg); }
+  .callout--hint strong { color: var(--feedback-hint-fg); }
+
+  .answer-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .answer-row input { flex: 1 1 200px; height: 48px; box-sizing: border-box; padding: 0 16px; border: 2px solid var(--neutral-100); border-radius: var(--radius-md); font: 400 18px var(--font-input); color: var(--color-text); }
+  .answer-row input:focus { border-color: var(--qed-green); }
+  .btn { height: 48px; padding: 0 22px; border: none; border-radius: var(--radius-pill); font: 500 16px var(--font-body); cursor: pointer; }
+  .btn--primary { background: var(--color-primary); color: var(--color-on-primary); }
+  .btn--primary:hover { background: var(--color-primary-hover); }
+  .btn--accent { background: var(--color-accent); color: var(--color-on-accent); }
+
+  .site-footer { background: var(--qed-charcoal); color: var(--neutral-100); font-size: 13px; }
+  .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); padding-block: var(--space-5); }
+  .tagline { font-weight: 300; font-style: italic; letter-spacing: .2em; text-transform: uppercase; color: var(--qed-yellow); }
+  @media (max-width: 480px) { .wrap { padding: 0 var(--space-4); } article h1 { font-size: 34px; } }
+</style>
+</head>
+<body style="background: var(--color-surface)">
+<header class="site-header">
+  <div class="wrap">
+    <a href="/"><img src="../assets/brand/badge-green.png" alt="The QED Room home"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#" aria-current="page">Lessons</a><a href="#">Videos</a><a href="#">Practice</a><a href="#">For teachers</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="lesson-nav" aria-label="Lessons in this unit">
+    <div class="eyebrow">Grade 9 · Quadratics</div>
+    <a href="#">1. What is a quadratic?</a>
+    <a href="#" aria-current="page">2. Solving by factoring</a>
+    <a href="#">3. Completing the square</a>
+    <a href="#">4. The quadratic formula</a>
+    <a href="#">5. Quiz</a>
+  </nav>
+
+  <article>
+    <div class="tags"><span class="tag tag--grade">Lesson 2 of 5</span><span class="tag tag--topic">12 min</span></div>
+    <h1>Solving quadratics by factoring</h1>
+    <p class="lead">If a product equals zero, at least one of its factors must be zero. That one idea turns a scary-looking equation into two easy ones.</p>
+
+    <div class="video"><button class="play" aria-label="Play video"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
+
+    <section class="panel">
+      <h2>Worked example</h2>
+      <div class="working">
+        $$\begin{aligned} x^2 + 5x + 6 &= 0 \\ (x + 2)(x + 3) &= 0 \\ x + 2 = 0 \quad &\text{or} \quad x + 3 = 0 \end{aligned}$$
+        <div class="answer"><span class="answer-highlight">$x = -2 \quad \text{or} \quad x = -3$</span></div>
+      </div>
+      <div class="callout callout--hint">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--yellow-900)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2V16h5v-.2c.1-.8.5-1.5 1.1-2A6 6 0 0 0 12 3z"/></svg>
+        <div><strong>Hint:</strong> $2 \times 3 = 6$ and $2 + 3 = 5$, so those are our numbers.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Your turn</h2>
+      <label for="try1">Solve $x^2 - 7x + 10 = 0$</label>
+      <div class="answer-row">
+        <input id="try1" placeholder="x = …" autocomplete="off">
+        <button class="btn btn--primary">Check</button>
+        <button class="btn btn--accent">Show hint</button>
+      </div>
+    </section>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap"><span class="tagline">Where it's quite easily done</span><span>Aligned to the DepEd mathematics curriculum</span></div>
+</footer>
+</body>
+</html>

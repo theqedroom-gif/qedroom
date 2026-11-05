@@ -1,0 +1,188 @@
+---
+import 'katex/dist/katex.min.css';
+import '../../qed-design/tokens.css';
+import '../styles/site.css';
+import { getCurriculum } from '../lib/curriculum.js';
+
+const { title, description, noindex = false } = Astro.props;
+const fullTitle = title ? `${title} · The QED Room` : "The QED Room: Where it's quite easily done";
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const image = new URL('/brand/badge-green.png', Astro.site);
+const YOUTUBE = 'https://www.youtube.com/@TheQEDRoom';
+const FACEBOOK = 'https://www.facebook.com/theqedroom';
+
+const { grades } = await getCurriculum();
+const grade = grades[0];
+const searchItems = grades.flatMap((g) =>
+  g.chapters.flatMap((chapter) => [
+    { t: chapter.title, c: `${g.title} · Period ${chapter.period}`, u: chapter.url, k: chapter.strand },
+    ...chapter.lessons.map((lesson) => ({
+      t: lesson.title,
+      c: chapter.title,
+      u: lesson.url,
+      k: `${chapter.title} ${chapter.strand}`,
+      s: !lesson.live,
+    })),
+  ]),
+);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  {noindex && <meta name="robots" content="noindex">}
+  <link rel="canonical" href={canonical}>
+  <link rel="icon" type="image/png" href="/brand/badge-green.png">
+  <link rel="sitemap" href="/sitemap-index.xml">
+  <meta property="og:site_name" content="The QED Room">
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={image}>
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script is:inline>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap site-header__row">
+      <a class="site-header__logo" href="/"><img src="/brand/badge-green.png" width="44" height="44" alt="The QED Room home"></a>
+
+      <a class="nav-link nav-link--fallback" href={grade.url}>Lessons</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-button__wide">Lessons</span><span class="menu-button__narrow">Menu</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+
+      <form class="site-search" role="search" autocomplete="off">
+        <label class="visually-hidden" for="site-search-input">Search lessons</label>
+        <input id="site-search-input" type="search" placeholder="Search lessons, e.g. circles" aria-controls="site-search-results">
+        <div class="site-search__results" id="site-search-results" hidden></div>
+      </form>
+
+      <a class="nav-link nav-link--end" href={YOUTUBE} rel="noopener">YouTube</a>
+    </div>
+
+    <div class="site-menu" id="site-menu" hidden>
+      <div class="wrap">
+        <div class="site-menu__top">
+          <a class="site-menu__grade" href={grade.url}>All of {grade.title}</a>
+        </div>
+        <div class="site-menu__periods">
+          {grade.periods.map((period) => (
+            <section class={`period-color-${period.number}`}>
+              <h2 class="site-menu__period"><a href={period.url}>Period {period.number}</a></h2>
+              <ul>
+                {period.chapters.map((chapter) => <li><a href={chapter.url}>{chapter.title}</a></li>)}
+              </ul>
+            </section>
+          ))}
+        </div>
+        <div class="site-menu__links">
+          <a href={YOUTUBE} rel="noopener">YouTube</a>
+          <a href={FACEBOOK} rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main"><slot /></main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__row">
+      <span class="tagline">Where it's quite easily done</span>
+      <span class="site-footer__links">
+        <a href={YOUTUBE} rel="noopener">YouTube</a>
+        <a href={FACEBOOK} rel="noopener">Facebook</a>
+      </span>
+      <span>Aligned to the DepEd mathematics curriculum</span>
+    </div>
+  </footer>
+
+  <script type="application/json" id="search-data" set:html={JSON.stringify(searchItems).replace(/</g, '\\u003c')}></script>
+  <script is:inline>
+    (function () {
+      var root = document.documentElement;
+
+      // Main menu
+      var button = document.querySelector('.menu-button');
+      var menu = document.getElementById('site-menu');
+      function setMenu(open) {
+        menu.hidden = !open;
+        button.setAttribute('aria-expanded', String(open));
+        root.classList.toggle('menu-open', open);
+      }
+      button.addEventListener('click', function () { setMenu(menu.hidden); });
+      menu.addEventListener('click', function (event) {
+        if (event.target.closest('a')) setMenu(false);
+      });
+
+      // Search
+      var form = document.querySelector('.site-search');
+      var input = document.getElementById('site-search-input');
+      var results = document.getElementById('site-search-results');
+      var items = JSON.parse(document.getElementById('search-data').textContent);
+      function closeResults() { results.hidden = true; }
+      function search() {
+        var words = input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+        results.textContent = '';
+        if (!words.length) { closeResults(); return; }
+        var found = items.filter(function (item) {
+          var text = (item.t + ' ' + item.c + ' ' + (item.k || '')).toLowerCase();
+          return words.every(function (word) { return text.indexOf(word) !== -1; });
+        }).slice(0, 8);
+        results.hidden = false;
+        if (!found.length) {
+          var empty = document.createElement('p');
+          empty.textContent = 'No lessons found. Try another word.';
+          results.appendChild(empty);
+          return;
+        }
+        found.forEach(function (item) {
+          var link = document.createElement('a');
+          link.href = item.u;
+          var title = document.createElement('span');
+          title.textContent = item.t;
+          var meta = document.createElement('small');
+          meta.textContent = item.c + (item.s ? ' · Coming soon' : '');
+          link.appendChild(title);
+          link.appendChild(meta);
+          results.appendChild(link);
+        });
+      }
+      input.addEventListener('input', search);
+      input.addEventListener('focus', search);
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var first = results.querySelector('a');
+        if (first) location.href = first.href;
+      });
+
+      // Close with Escape or a click elsewhere
+      document.addEventListener('keydown', function (event) {
+        if (event.key !== 'Escape') return;
+        if (!results.hidden) { closeResults(); input.focus(); }
+        else if (!menu.hidden) { setMenu(false); button.focus(); }
+      });
+      document.addEventListener('click', function (event) {
+        if (!event.target.closest('.site-search')) closeResults();
+        if (!event.target.closest('.site-header')) setMenu(false);
+      });
+
+      // Course outline button on phones
+      var outlineButton = document.querySelector('.outline-button');
+      var outline = document.getElementById('course-outline');
+      if (outlineButton && outline) {
+        outlineButton.addEventListener('click', function () {
+          var open = outline.classList.toggle('is-open');
+          outlineButton.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

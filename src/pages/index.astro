@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCurriculum } from '../lib/curriculum.js';
+const { grades } = await getCurriculum();
+const grade = grades[0];
+---
+<Base description="Free math lessons, worked examples and exercises for Filipino students, explained step by step by The QED Room.">
+  <section class="hero">
+    <div class="wrap hero__row">
+      <div class="hero__text">
+        <h1>Math for students who find math hard</h1>
+        <p class="lead">Read each lesson at your own pace, follow worked examples step by step, and use the exercises to check what you've learned. Kaya mo 'yan!</p>
+        <div class="actions">
+          <a class="btn btn--primary" href={grade.url}>Start learning</a>
+          <a class="btn btn--secondary" href="https://www.youtube.com/@TheQEDRoom" rel="noopener">Watch on YouTube</a>
+        </div>
+      </div>
+      <img class="hero__logo" src="/brand/logo-green.png" width="1060" height="680" alt="The QED Room">
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="section__title">{grade.title}</h2>
+    <p class="meta">{grade.chapters.length} chapters · {grade.lessons.length} lessons · following the MATATAG curriculum</p>
+    <div class="period-grid">
+      {grade.periods.map((period) => (
+        <a class="period-card" href={period.url}>
+          <h3 class="card__title">Period {period.number}</h3>
+          <ul>
+            {period.chapters.map((chapter) => <li>{chapter.title}</li>)}
+          </ul>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <script is:inline>
+    // The old site used addresses like /#hs-math/grade-10/index.md. Send those links to the new pages.
+    (function () {
+      var oldLinks = {
+        'index.md': '/',
+        'hs-math/index.md': '/lessons/',
+        'hs-math/grade-10/index.md': '/lessons/grade-10/',
+        'hs-math/grade-10/ch01/index.md': '/lessons/grade-10/laws-of-sines-and-cosines/',
+        'hs-math/grade-10/ch01/law-of-sine.md': '/lessons/grade-10/laws-of-sines-and-cosines/law-of-sines/'
+      };
+      var target = oldLinks[decodeURIComponent(location.hash.slice(1))];
+      if (target) location.replace(target);
+    })();
+  </script>
+</Base>

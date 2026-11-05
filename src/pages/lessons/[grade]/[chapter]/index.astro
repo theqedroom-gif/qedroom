@@ -1,0 +1,57 @@
+---
+import { render } from 'astro:content';
+import Base from '../../../../layouts/Base.astro';
+import CourseOutline from '../../../../components/CourseOutline.astro';
+import { getCurriculum } from '../../../../lib/curriculum.js';
+
+export async function getStaticPaths() {
+  const { grades } = await getCurriculum();
+  return grades.flatMap((grade) =>
+    grade.chapters.map((chapter) => {
+      const [, slug] = chapter.id.split('/');
+      return { params: { grade: grade.id, chapter: slug }, props: { grade, chapter } };
+    }),
+  );
+}
+
+const { grade, chapter } = Astro.props;
+const Content = chapter.entry ? (await render(chapter.entry)).Content : null;
+const lead = chapter.entry?.data.lead ?? `In this chapter, you will learn about ${chapter.standard}`;
+const description = chapter.entry?.data.description ?? `${chapter.title} lessons for ${grade.title} math, following the DepEd MATATAG curriculum.`;
+const first = chapter.lessons[0];
+---
+<Base title={chapter.title} description={description}>
+  <div class="wrap layout">
+    <CourseOutline grade={grade} chapter={chapter} />
+    <div class="layout__main">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/lessons/">Lessons</a><span aria-hidden="true">›</span><a href={grade.url}>{grade.title}</a>
+      </nav>
+      <article class="prose">
+        <div class="tags">
+          <span class="tag tag--grade">{grade.title} · Period {chapter.period}</span>
+          <span class="tag tag--topic">{chapter.strand}</span>
+        </div>
+        <h1>{chapter.title}</h1>
+        <p class="lead">{lead}</p>
+
+        <ol class="lesson-list">
+          {chapter.lessons.map((lesson) => (
+            <li>
+              <a href={lesson.url}>
+                <span>{lesson.title}</span>
+                {!lesson.live && <span class="tag tag--soon">Coming soon</span>}
+              </a>
+            </li>
+          ))}
+        </ol>
+
+        {Content && <Content />}
+
+        <div class="pager actions">
+          <a class="btn btn--primary" href={first.url}>Start: {first.title}</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</Base>

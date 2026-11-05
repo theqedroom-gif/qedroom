@@ -1,0 +1,87 @@
+/* The QED Room — design tokens
+   Source of truth for colour, type, spacing and shape.
+   Import once at the top of the site's main stylesheet. */
+
+@import url("https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Roboto+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ---- Brand ---- */
+  --qed-green: #3B5D39;      /* primary: headings, buttons, links, nav */
+  --qed-yellow: #E8C544;     /* accent: highlights, hints, rewards — never text on white */
+  --qed-charcoal: #333333;   /* ink: body text, icons, dark surfaces */
+  --qed-white: #FFFFFF;
+
+  /* ---- Ramps (900 → 50) ---- */
+  --neutral-900: #141414; --neutral-700: #2F2F2F; --neutral-500: #575757; --neutral-400: #8B8B8B;
+  --neutral-300: #BEBEBE; --neutral-100: #DCDCDC; --neutral-50: #EFEFEF; --paper: #F5F5F5;
+
+  --red-900: #691119; --red-700: #A12028; --red-500: #C84152; --red-400: #E76F82;
+  --red-300: #EFA1AF; --red-100: #F5D5DB; --red-50: #F5D5DB;
+
+  --orange-900: #603713; --orange-700: #8A4E1E; --orange-500: #CB7732; --orange-400: #ED8736;
+  --orange-300: #F1B275; --orange-100: #F9DEC2; --orange-50: #F9DEC2;
+
+  --yellow-900: #604C15; --yellow-700: #957725; --yellow-500: #D4A738; --yellow-400: #F7CE55;
+  --yellow-300: #FAE397; --yellow-100: #FDF1C9; --yellow-50: #FDF1C9;
+
+  --green-900: #183F34; --green-700: #2A6050; --green-500: #3D8771; --green-400: #54B698;
+  --green-300: #67DDB9; --green-100: #CBF3EB; --green-50: #CBF3EB;
+
+  --blue-900: #143657; --blue-700: #205080; --blue-500: #3C87D8; --blue-400: #69B7F9;
+  --blue-300: #98CFFB; --blue-100: #D3EBFD; --blue-50: #D3EBFD;
+
+  --purple-900: #230374; --purple-700: #401AA5; --purple-500: #6747BB; --purple-400: #8D72F7;
+  --purple-300: #AB97F8; --purple-100: #D8D1F5; --purple-50: #D8D1F5;
+
+  /* ---- Semantic roles ---- */
+  --color-bg: var(--qed-white);
+  --color-surface: var(--paper);
+  --color-text: var(--qed-charcoal);
+  --color-text-muted: var(--neutral-500);
+  --color-border: var(--neutral-100);
+  --color-primary: var(--qed-green);
+  --color-primary-hover: var(--green-900);
+  --color-on-primary: var(--qed-white);
+  --color-accent: var(--qed-yellow);
+  --color-on-accent: var(--qed-charcoal);
+  --color-link: var(--qed-green);
+
+  --feedback-correct-fg: var(--green-700);  --feedback-correct-bg: var(--green-50);
+  --feedback-hint-fg: var(--yellow-900);    --feedback-hint-bg: var(--yellow-50);
+  --feedback-error-fg: var(--red-700);      --feedback-error-bg: var(--red-50);
+  --feedback-info-fg: var(--blue-700);      --feedback-info-bg: var(--blue-50);
+
+  /* ---- Typography ---- */
+  --font-display: "Amaranth", system-ui, sans-serif;  /* headings only, weight 700 */
+  --font-body: "Roboto", system-ui, sans-serif;       /* body + UI, 300–700 */
+  --font-input: "Roboto Mono", ui-monospace, monospace; /* what students type — NOT for rendered maths */
+
+  --text-display: 56px/60px;
+  --text-h1: 40px/46px;
+  --text-h2: 28px/34px;
+  --text-h3: 20px/28px;   /* Roboto 500 */
+  --text-body: 17px/28px;
+  --text-small: 14px/22px;
+  --tagline-tracking: 0.24em; /* Roboto 300 italic, uppercase */
+
+  /* ---- Shape & space ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --shadow-card: 0 2px 8px rgba(59, 93, 57, 0.12);
+  --target-min: 44px;
+  --content-max: 1160px;
+}
+
+/* Base */
+body { margin: 0; font: 400 var(--text-body) var(--font-body); color: var(--color-text); background: var(--color-bg); }
+h1, h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-primary); }
+h1 { font: 700 var(--text-h1) var(--font-display); }
+h2 { font: 700 var(--text-h2) var(--font-display); }
+h3 { font: 500 var(--text-h3) var(--font-body); }
+a { color: var(--color-link); }
+a:hover { color: var(--color-primary-hover); }
+:focus-visible { outline: 3px solid var(--qed-yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--qed-charcoal); }

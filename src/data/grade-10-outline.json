@@ -1,0 +1,190 @@
+{
+  "id": "grade-10",
+  "title": "Grade 10",
+  "periods": [
+    {
+      "number": 1,
+      "chapters": [
+        {
+          "slug": "laws-of-sines-and-cosines",
+          "title": "Laws of Sines and Cosines",
+          "formula": "\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B}",
+          "lessons": [
+            { "slug": "law-of-sines", "title": "The Law of Sines", "competency": 1 },
+            { "slug": "ambiguous-case", "title": "The ambiguous case", "competency": 1 },
+            { "slug": "law-of-cosines", "title": "The Law of Cosines", "competency": 2 },
+            { "slug": "problems-with-bearings", "title": "Problems with bearings", "competency": 5 }
+          ]
+        },
+        {
+          "slug": "transformations",
+          "title": "Translations, Reflections and Rotations",
+          "formula": "(x, y) \\to (x + h, y + k)",
+          "lessons": [
+            { "slug": "points-in-the-plane", "title": "Points in the Cartesian plane", "competency": 3 },
+            { "slug": "describing-transformations", "title": "Describing transformations with coordinates", "competency": 4 }
+          ]
+        },
+        {
+          "slug": "quadratic-inequalities",
+          "title": "Quadratic Inequalities",
+          "formula": "ax^2 + bx + c > 0",
+          "lessons": [
+            { "slug": "on-the-number-line", "title": "Quadratic inequalities on the number line", "competency": 6 },
+            { "slug": "one-variable", "title": "Solving quadratic inequalities in one variable", "competency": 7 },
+            { "slug": "problems", "title": "Problems with quadratic inequalities", "competency": 8 },
+            { "slug": "two-variables", "title": "Quadratic inequalities in two variables", "competency": 9 },
+            { "slug": "regions-of-solutions", "title": "Regions of solutions", "competency": 10 }
+          ]
+        },
+        {
+          "slug": "absolute-value",
+          "title": "Absolute Value Equations and Inequalities",
+          "formula": "|x - a| < b",
+          "lessons": [
+            { "slug": "equations", "title": "Absolute value equations", "competency": 11 },
+            { "slug": "inequalities", "title": "Absolute value inequalities", "competency": 12 }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "chapters": [
+        {
+          "slug": "measures-of-position",
+          "title": "Measures of Position",
+          "formula": "Q_2 = D_5 = P_{50}",
+          "lessons": [
+            { "slug": "quartiles-deciles-percentiles", "title": "Quartiles, deciles and percentiles", "competency": 1 },
+            { "slug": "calculating", "title": "Calculating measures of position", "competency": 3 },
+            { "slug": "percentile-rank", "title": "Percentile rank", "competency": 4 },
+            { "slug": "drawing-conclusions", "title": "Drawing conclusions from data", "competency": 5 }
+          ]
+        },
+        {
+          "slug": "box-plots-and-cumulative-frequency",
+          "title": "Box Plots and Cumulative Frequency",
+          "formula": "\\text{IQR} = Q_3 - Q_1",
+          "lessons": [
+            { "slug": "constructing-and-interpreting", "title": "Box-and-whisker plots and cumulative frequency graphs", "competency": 2 }
+          ]
+        },
+        {
+          "slug": "radical-expressions",
+          "title": "Radical Expressions",
+          "formula": "\\sqrt[n]{a^m} = a^{m/n}",
+          "lessons": [
+            { "slug": "rational-exponents", "title": "Laws of rational exponents", "competency": 6 },
+            { "slug": "simplifying", "title": "Simplifying radical expressions", "competency": 7 },
+            { "slug": "operations", "title": "Operations with radical expressions", "competency": 8 }
+          ]
+        },
+        {
+          "slug": "nature-of-roots",
+          "title": "Nature of Roots",
+          "formula": "D = b^2 - 4ac",
+          "lessons": [
+            { "slug": "the-discriminant", "title": "The discriminant", "competency": 9 }
+          ]
+        },
+        {
+          "slug": "quadratic-functions",
+          "title": "Quadratic Functions",
+          "formula": "y = ax^2 + bx + c",
+          "lessons": [
+            { "slug": "finding-the-equation", "title": "Finding the equation of a quadratic function", "competency": 10 },
+            { "slug": "problems", "title": "Problems with quadratic functions", "competency": 12 }
+          ]
+        },
+        {
+          "slug": "equations-reducible-to-quadratic",
+          "title": "Equations Reducible to Quadratic",
+          "formula": "x^4 - 5x^2 + 4 = 0",
+          "lessons": [
+            {
+              "slug": "reducible-equations",
+              "title": "Equations reducible to quadratic equations",
+              "competency": 11,
+              "competencyText": "solve equations reducible to quadratic equations, e.g., $x^4 - 5x^2 + 4 = 0$."
+            },
+            { "slug": "radical-equations", "title": "Radical equations", "competency": 13 }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "chapters": [
+        {
+          "slug": "equation-of-a-circle",
+          "title": "The Equation of a Circle",
+          "formula": "(x - h)^2 + (y - k)^2 = r^2",
+          "lessons": [
+            { "slug": "center-radius-and-general-form", "title": "Center-radius form and general form", "competency": 1 },
+            { "slug": "center-and-radius", "title": "Finding the center and radius", "competency": 2 },
+            { "slug": "graphing", "title": "Graphing a circle", "competency": 3 },
+            { "slug": "finding-the-equation", "title": "Finding the equation of a circle", "competency": 4 },
+            { "slug": "figures-on-the-plane", "title": "Geometric figures on the Cartesian plane", "competency": 5 }
+          ]
+        },
+        {
+          "slug": "statistical-reports",
+          "title": "Statistical Reports",
+          "formula": "\\bar{x} = \\dfrac{\\sum x}{n}",
+          "lessons": [
+            { "slug": "evaluating", "title": "Evaluating statistical reports", "competency": 6 }
+          ]
+        },
+        {
+          "slug": "probability",
+          "title": "Probability of Events",
+          "formula": "P(A') = 1 - P(A)",
+          "lessons": [
+            { "slug": "mutually-exclusive-events", "title": "Mutually exclusive events", "competency": 7 },
+            { "slug": "complementary-events", "title": "Complementary events", "competency": 8 },
+            { "slug": "problems", "title": "Solving probability problems", "competency": 9 }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "chapters": [
+        {
+          "slug": "compound-interest-and-depreciation",
+          "title": "Compound Interest and Depreciation",
+          "formula": "A = P(1 + r)^n",
+          "lessons": [
+            { "slug": "simple-and-compound-interest", "title": "Simple and compound interest", "competency": 1 },
+            { "slug": "repeated-simple-interest", "title": "Compound interest by repeated simple interest", "competency": 2 },
+            { "slug": "repeated-interest-problems", "title": "Problems using repeated simple interest", "competency": 3 },
+            { "slug": "formulas", "title": "Formulas for compound interest and depreciation", "competency": 4 },
+            { "slug": "compounding-periods", "title": "Investing annually, quarterly and monthly", "competency": 5 },
+            { "slug": "real-life-problems", "title": "Real-life problems", "competency": 6 }
+          ]
+        },
+        {
+          "slug": "angles-and-lengths-in-circles",
+          "title": "Angles and Lengths in Circles",
+          "formula": "AP \\cdot PB = CP \\cdot PD",
+          "lessons": [
+            { "slug": "central-and-inscribed-angles", "title": "Central angles, inscribed angles, secants and tangents", "competency": 7 },
+            { "slug": "angle-problems", "title": "Problems with angles in a circle", "competency": 8 },
+            { "slug": "chords-secants-tangents", "title": "Chords, secants and tangents", "competency": 9 },
+            { "slug": "length-problems", "title": "Problems with lengths in a circle", "competency": 10 }
+          ]
+        },
+        {
+          "slug": "sectors-and-segments",
+          "title": "Sectors and Segments",
+          "formula": "A = \\dfrac{\\theta}{360^{\\circ}} \\pi r^2",
+          "lessons": [
+            { "slug": "areas", "title": "Sectors, segments and their areas", "competency": 11 },
+            { "slug": "problems", "title": "Problems with sectors and segments", "competency": 12 }
+          ]
+        }
+      ]
+    }
+  ]
+}

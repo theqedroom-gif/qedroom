@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCurriculum } from '../../lib/curriculum.js';
+const { grades } = await getCurriculum();
+---
+<Base title="Lessons" description="Browse The QED Room's math lessons by grade level, following the DepEd MATATAG curriculum.">
+  <div class="wrap section">
+    <h1>Lessons</h1>
+    <p class="lead">Pick your grade level to see its chapters.</p>
+    <div class="card-grid">
+      {grades.map((grade) => (
+        <a class="card" href={grade.url}>
+          <div class="card__body">
+            <h2 class="card__title">{grade.title}</h2>
+            <p class="meta">{grade.periods.length} periods · {grade.chapters.length} chapters · {grade.lessons.length} lessons</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

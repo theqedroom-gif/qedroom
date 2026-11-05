@@ -1,0 +1,13 @@
+---
+// Renders text that may contain inline LaTeX between $ signs.
+import katex from 'katex';
+const { text } = Astro.props;
+const html = text
+  .split(/(\$[^$]+\$)/)
+  .map((part) => {
+    if (part.startsWith('$')) return katex.renderToString(part.slice(1, -1), { throwOnError: false });
+    return part.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  })
+  .join('');
+---
+<Fragment set:html={html} />

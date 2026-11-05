@@ -1,0 +1,29 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ChapterCard from '../../../components/ChapterCard.astro';
+import { getCurriculum } from '../../../lib/curriculum.js';
+
+export async function getStaticPaths() {
+  const { grades } = await getCurriculum();
+  return grades.map((grade) => ({ params: { grade: grade.id }, props: { grade } }));
+}
+
+const { grade } = Astro.props;
+---
+<Base title={grade.title} description={`${grade.title} math lessons from The QED Room, following the DepEd MATATAG curriculum.`}>
+  <div class="wrap section">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/lessons/">Lessons</a></nav>
+    <h1 class="page-title">{grade.title}</h1>
+    <nav class="period-jump" aria-label="Periods">
+      {grade.periods.map((period) => <a href={`#period-${period.number}`}>Period {period.number}</a>)}
+    </nav>
+    {grade.periods.map((period) => (
+      <section class="period" id={`period-${period.number}`}>
+        <h2>Period {period.number}</h2>
+        <div class="card-grid">
+          {period.chapters.map((chapter) => <ChapterCard chapter={chapter} gradeTitle={grade.title} />)}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>

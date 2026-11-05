@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380" role="img" aria-labelledby="title">
+    <title id="title">Boat positions X and Y, 400 metres apart, sighting hilltop T at 18 and 30 degrees</title>
+    <!-- colours match qed-design/tokens.css -->
+    <defs>
+        <style>
+            .math { font-family: "Cambria Math", "Times New Roman", serif; font-style: italic; }
+            .num { font-family: "Cambria Math", "Times New Roman", serif; }
+        </style>
+    </defs>
+
+    <!-- sea level, triangle XYT and the right triangle under it -->
+    <path d="M100 310 L760 310" fill="none" stroke="#575757" stroke-width="3" stroke-dasharray="10 8"/>
+    <path d="M166 310 L408 310 L720 130 Z" fill="#F5F5F5" stroke="#3B5D39" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M408 310 L720 310 L720 130" fill="none" stroke="#3B5D39" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M696 310 L696 286 L720 286" fill="none" stroke="#3B5D39" stroke-width="3"/>
+
+    <!-- angles at X and Y -->
+    <path d="M166 310 L241 310 A75 75 0 0 0 237 287 Z" fill="#E8C544" fill-opacity=".45"/>
+    <path d="M241 310 A75 75 0 0 0 237 287" fill="none" stroke="#E8C544" stroke-width="4"/>
+    <path d="M408 310 L483 310 A75 75 0 0 0 473 272.5 Z" fill="#E8C544" fill-opacity=".45"/>
+    <path d="M483 310 A75 75 0 0 0 473 272.5" fill="none" stroke="#E8C544" stroke-width="4"/>
+
+    <!-- labels -->
+    <text class="math" x="166" y="350" font-size="32" fill="#333333" text-anchor="middle">X</text>
+    <text class="math" x="408" y="350" font-size="32" fill="#333333" text-anchor="middle">Y</text>
+    <text class="math" x="720" y="108" font-size="32" fill="#333333" text-anchor="middle">T</text>
+    <text class="math" x="745" y="230" font-size="30" fill="#575757" text-anchor="middle">h</text>
+    <text class="num" x="287" y="350" font-size="26" fill="#575757" text-anchor="middle">400 m</text>
+    <text class="num" x="282" y="298" font-size="24" fill="#333333" text-anchor="middle">18°</text>
+    <text class="num" x="524" y="294" font-size="24" fill="#333333" text-anchor="middle">30°</text>
+</svg>

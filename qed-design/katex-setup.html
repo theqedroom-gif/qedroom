@@ -1,0 +1,33 @@
+<!--
+  The QED Room — KaTeX setup
+  Paste into the <head> of every page (or the site's base layout).
+  Then write all maths as LaTeX in the HTML/Markdown:
+    inline:   \( ax^2 + bx + c = 0 \)   or   $ax^2 + bx + c = 0$
+    display:  \[ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]   or   $$ ... $$
+  Never type maths with Unicode (x², −, ×, √) or Roboto Mono.
+-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '\\[', right: '\\]', display: true },
+      { left: '$', right: '$', display: false },
+      { left: '\\(', right: '\\)', display: false }
+    ],
+    ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'input'],
+    throwOnError: false
+  });"></script>
+<style>
+  /* KaTeX inherits the surrounding text colour; keep it at 1.21em of body size (KaTeX default). */
+  .katex-display { margin: 0.75em 0; overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+  .answer-highlight { background: var(--yellow-50); color: var(--yellow-900); padding: 4px 14px; border-radius: var(--radius-sm); }
+</style>
+
+<!--
+  Frameworks:
+  - React/Next:  npm i katex react-katex  →  <InlineMath math="ax^2+bx+c=0" /> / <BlockMath math="..." />
+  - Markdown (MDX, Astro, Docusaurus): remark-math + rehype-katex
+  - Static build: katex.renderToString(tex, { displayMode }) at build time (no client JS needed)
+-->
