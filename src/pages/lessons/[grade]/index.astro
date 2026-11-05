@@ -15,10 +15,10 @@ const { grade } = Astro.props;
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/lessons/">Lessons</a></nav>
     <h1 class="page-title">{grade.title}</h1>
     <nav class="period-jump" aria-label="Periods">
-      {grade.periods.map((period) => <a href={`#period-${period.number}`}>Period {period.number}</a>)}
+      {grade.periods.map((period) => <a class={`period-color-${period.number}`} href={`#period-${period.number}`}>Period {period.number}</a>)}
     </nav>
     {grade.periods.map((period) => (
-      <section class="period" id={`period-${period.number}`}>
+      <section class={`period period-color-${period.number}`} id={`period-${period.number}`}>
         <h2>Period {period.number}</h2>
         <div class="card-grid">
           {period.chapters.map((chapter) => <ChapterCard chapter={chapter} gradeTitle={grade.title} />)}

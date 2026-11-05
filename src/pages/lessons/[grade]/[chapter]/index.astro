@@ -38,7 +38,7 @@ const first = chapter.lessons[0];
         <ol class="lesson-list">
           {chapter.lessons.map((lesson) => (
             <li>
-              <a href={lesson.url}>
+              <a href={lesson.url} data-lesson-link={lesson.id}>
                 <span>{lesson.title}</span>
                 {!lesson.live && <span class="tag tag--soon">Coming soon</span>}
               </a>
@@ -54,4 +54,7 @@ const first = chapter.lessons[0];
       </article>
     </div>
   </div>
+  <script>
+    import '../../../../scripts/lesson.js';
+  </script>
 </Base>

@@ -10,25 +10,35 @@
     <!-- triangle -->
     <path d="M80 330 L520 330 L340 70 Z" fill="#F5F5F5" stroke="#3B5D39" stroke-width="5" stroke-linejoin="round"/>
 
+    <!-- sides: shown when a matching pair is highlighted -->
+    <line class="side" data-pair="a" x1="520" y1="330" x2="340" y2="70" stroke="#3B5D39" stroke-width="11" stroke-linecap="round" opacity="0"/>
+    <line class="side" data-pair="b" x1="80" y1="330" x2="340" y2="70" stroke="#3B5D39" stroke-width="11" stroke-linecap="round" opacity="0"/>
+    <line class="side" data-pair="c" x1="80" y1="330" x2="520" y2="330" stroke="#3B5D39" stroke-width="11" stroke-linecap="round" opacity="0"/>
+
+    <!-- wider invisible lines make the sides easy to tap -->
+    <line class="side-hit" data-pair="a" x1="520" y1="330" x2="340" y2="70" stroke="transparent" stroke-width="30"/>
+    <line class="side-hit" data-pair="b" x1="80" y1="330" x2="340" y2="70" stroke="transparent" stroke-width="30"/>
+    <line class="side-hit" data-pair="c" x1="80" y1="330" x2="520" y2="330" stroke="transparent" stroke-width="30"/>
+
     <!-- angle A -->
-    <path d="M80 330 L124 330 A44 44 0 0 0 111.1 298.9 Z" fill="#E8C544" fill-opacity=".35"/>
-    <path d="M124 330 A44 44 0 0 0 111.1 298.9" fill="none" stroke="#E8C544" stroke-width="4"/>
+    <path data-pair="a" d="M80 330 L124 330 A44 44 0 0 0 111.1 298.9 Z" fill="#E8C544" fill-opacity=".35"/>
+    <path data-pair="a" d="M124 330 A44 44 0 0 0 111.1 298.9" fill="none" stroke="#E8C544" stroke-width="4"/>
 
     <!-- angle B -->
-    <path d="M520 330 L495 293.8 A44 44 0 0 0 476 330 Z" fill="#E8C544" fill-opacity=".35"/>
-    <path d="M495 293.8 A44 44 0 0 0 476 330" fill="none" stroke="#E8C544" stroke-width="4"/>
+    <path data-pair="b" d="M520 330 L495 293.8 A44 44 0 0 0 476 330 Z" fill="#E8C544" fill-opacity=".35"/>
+    <path data-pair="b" d="M495 293.8 A44 44 0 0 0 476 330" fill="none" stroke="#E8C544" stroke-width="4"/>
 
     <!-- angle C -->
-    <path d="M340 70 L308.9 101.1 A44 44 0 0 0 365 106.2 Z" fill="#E8C544" fill-opacity=".35"/>
-    <path d="M308.9 101.1 A44 44 0 0 0 365 106.2" fill="none" stroke="#E8C544" stroke-width="4"/>
+    <path data-pair="c" d="M340 70 L308.9 101.1 A44 44 0 0 0 365 106.2 Z" fill="#E8C544" fill-opacity=".35"/>
+    <path data-pair="c" d="M308.9 101.1 A44 44 0 0 0 365 106.2" fill="none" stroke="#E8C544" stroke-width="4"/>
 
     <!-- vertex labels -->
-    <text class="math" x="51.9" y="340.4" font-size="34" fill="#333333" text-anchor="middle" dominant-baseline="central">A</text>
-    <text class="math" x="547.7" y="341.6" font-size="34" fill="#333333" text-anchor="middle" dominant-baseline="central">B</text>
-    <text class="math" x="344.6" y="40.3" font-size="34" fill="#333333" text-anchor="middle" dominant-baseline="central">C</text>
+    <text class="math" data-pair="a" x="51.9" y="340.4" font-size="34" fill="#333333" text-anchor="middle" dominant-baseline="central">A</text>
+    <text class="math" data-pair="b" x="547.7" y="341.6" font-size="34" fill="#333333" text-anchor="middle" dominant-baseline="central">B</text>
+    <text class="math" data-pair="c" x="344.6" y="40.3" font-size="34" fill="#333333" text-anchor="middle" dominant-baseline="central">C</text>
 
     <!-- side labels: each side is named after the opposite vertex -->
-    <text class="math" x="449.7" y="186.3" font-size="30" fill="#575757" text-anchor="middle" dominant-baseline="central">a</text>
-    <text class="math" x="193" y="183" font-size="30" fill="#575757" text-anchor="middle" dominant-baseline="central">b</text>
-    <text class="math" x="300" y="354" font-size="30" fill="#575757" text-anchor="middle" dominant-baseline="central">c</text>
+    <text class="math" data-pair="a" x="449.7" y="186.3" font-size="30" fill="#575757" text-anchor="middle" dominant-baseline="central">a</text>
+    <text class="math" data-pair="b" x="193" y="183" font-size="30" fill="#575757" text-anchor="middle" dominant-baseline="central">b</text>
+    <text class="math" data-pair="c" x="300" y="354" font-size="30" fill="#575757" text-anchor="middle" dominant-baseline="central">c</text>
 </svg>

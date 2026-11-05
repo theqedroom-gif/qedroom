@@ -15,7 +15,7 @@ We name each side of a triangle after the angle opposite it, so side $a$ is oppo
 
 <figcaption>
 
-Figure 1.2: Acute triangle $ABC$
+Figure 1.2: Acute triangle $ABC$. Hover over or tap a side or an angle to see its matching pair.
 
 </figcaption>
 </figure>
@@ -52,6 +52,16 @@ $$
 $$
 
 Drawing the height from a different vertex brings in $\dfrac{c}{\sin C}$ the same way. The law also works for obtuse triangles.
+
+## Try it yourself
+
+Drag any yellow corner to change the triangle. The sides and angles change, but the three results stay equal to each other.
+
+<div class="lab" data-triangle-lab>
+
+Turn on JavaScript in your browser to use this interactive triangle.
+
+</div>
 
 ## When to use it
 
@@ -121,7 +131,7 @@ $b \approx 20.21$
 
 <section class="panel">
 <div class="panel__label">Chapter problem</div>
-<div class="steps" role="img" aria-label="Part A of 4, in progress"><span class="now">A</span><span>B</span><span>C</span><span>D</span></div>
+<nav class="steps" aria-label="Chapter problem progress" data-problem-steps><a class="now" href="/lessons/grade-10/laws-of-sines-and-cosines/law-of-sines/" data-lesson="grade-10/laws-of-sines-and-cosines/law-of-sines">A</a><a href="/lessons/grade-10/laws-of-sines-and-cosines/ambiguous-case/" data-lesson="grade-10/laws-of-sines-and-cosines/ambiguous-case">B</a><a href="/lessons/grade-10/laws-of-sines-and-cosines/law-of-cosines/" data-lesson="grade-10/laws-of-sines-and-cosines/law-of-cosines">C</a><a href="/lessons/grade-10/laws-of-sines-and-cosines/problems-with-bearings/" data-lesson="grade-10/laws-of-sines-and-cosines/problems-with-bearings">D</a></nav>
 
 **Part A: The viewpoint on Isla Bato.** With the Law of Sines, we can now find the height of the viewpoint. Kuya Ben measured $18^{\circ}$ from point $X$, then sailed $400 \text{ m}$ to point $Y$ and measured $30^{\circ}$. Let $T$ be the top of the viewpoint.
 

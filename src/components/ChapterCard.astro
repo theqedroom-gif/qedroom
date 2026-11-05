@@ -3,7 +3,7 @@ import Tex from './Tex.astro';
 const { chapter, gradeTitle } = Astro.props;
 const total = chapter.lessons.length;
 ---
-<a class="card" href={chapter.url}>
+<a class={`card period-color-${chapter.period}`} href={chapter.url}>
   <div class="card__band"><Tex tex={chapter.formula} display /></div>
   <div class="card__body">
     <div class="tags">
@@ -11,6 +11,12 @@ const total = chapter.lessons.length;
       <span class="tag tag--topic">{chapter.strand}</span>
     </div>
     <h3 class="card__title">{chapter.title}</h3>
+    {chapter.readyCount > 0 && (
+      <div class="progress" data-progress={chapter.lessons.map((lesson) => lesson.id).join(',')} hidden>
+        <div class="progress__bar" role="progressbar" aria-label={`Progress in ${chapter.title}`} aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress__fill"></span></div>
+        <span class="progress__label">0%</span>
+      </div>
+    )}
     <p class="meta">
       {chapter.readyCount > 0
         ? `${chapter.readyCount} of ${total} ${total === 1 ? 'lesson' : 'lessons'} ready`

@@ -6,6 +6,11 @@ import outline from '../data/grade-10-outline.json';
 // into chapters and lessons. A lesson goes live once its Markdown file exists in
 // src/content/lessons/<grade>/<chapter>/. Until then it shows as Coming soon.
 
+// A YouTube link in the sheet's Learning Materials column shows on that lesson.
+function youtubeId(text = '') {
+  return text.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:[^\s]*&)?v=|embed\/|shorts\/))([\w-]{11})/)?.[1] ?? null;
+}
+
 function readSheet() {
   const rows = new Map();
   const lines = sheet.split(/\r?\n/).slice(1).filter((line) => line.trim());
@@ -18,6 +23,7 @@ function readSheet() {
       standard: cols[3].replace(/^demonstrates knowledge and understanding of\s*/, ''),
       competency: match[2],
       code: cols[6] ?? '',
+      videoId: youtubeId(cols[7]),
     });
   }
   return rows;
@@ -53,6 +59,7 @@ export async function getCurriculum() {
           title: entry?.data.title ?? lesson.title,
           competencyText: lesson.competencyText ?? row.competency,
           code: row.code,
+          videoId: lesson.videoId ?? row.videoId,
           strand: row.strand,
           standard: row.standard,
         };

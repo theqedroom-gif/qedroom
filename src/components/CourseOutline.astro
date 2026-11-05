@@ -24,7 +24,7 @@ const label = lesson
               </li>
               {item.lessons.map((entry) => (
                 <li>
-                  <a href={entry.url} aria-current={lesson?.id === entry.id ? 'page' : undefined}>
+                  <a href={entry.url} data-lesson-link={entry.id} aria-current={lesson?.id === entry.id ? 'page' : undefined}>
                     <span>{entry.title}</span>
                     {!entry.live && <span class="outline__soon">Coming soon</span>}
                   </a>

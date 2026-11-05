@@ -43,6 +43,7 @@ Sa dulo ng bawat sections, sasagutin natin ang ilang parts ng ating chapter ques
 
 <section class="panel">
 <div class="panel__label">Chapter problem</div>
+<nav class="steps" aria-label="Chapter problem progress" data-problem-steps><a class="now" href="/lessons/grade-10/laws-of-sines-and-cosines/law-of-sines/" data-lesson="grade-10/laws-of-sines-and-cosines/law-of-sines">A</a><a href="/lessons/grade-10/laws-of-sines-and-cosines/ambiguous-case/" data-lesson="grade-10/laws-of-sines-and-cosines/ambiguous-case">B</a><a href="/lessons/grade-10/laws-of-sines-and-cosines/law-of-cosines/" data-lesson="grade-10/laws-of-sines-and-cosines/law-of-cosines">C</a><a href="/lessons/grade-10/laws-of-sines-and-cosines/problems-with-bearings/" data-lesson="grade-10/laws-of-sines-and-cosines/problems-with-bearings">D</a></nav>
 
 ### Kuya Ben's island-hopping tour
 

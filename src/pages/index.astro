@@ -15,16 +15,49 @@ const grade = grades[0];
           <a class="btn btn--secondary" href="https://www.youtube.com/@TheQEDRoom" rel="noopener">Watch on YouTube</a>
         </div>
       </div>
-      <img class="hero__logo" src="/brand/logo-green.png" width="1060" height="680" alt="The QED Room">
+      <dl class="hero__facts">
+        <div><dt>periods</dt><dd>{grade.periods.length}</dd></div>
+        <div><dt>chapters</dt><dd>{grade.chapters.length}</dd></div>
+        <div><dt>lessons planned</dt><dd>{grade.lessons.length}</dd></div>
+        <div><dt>to use</dt><dd>Free</dd></div>
+      </dl>
+      <div class="logo-glow"><img class="hero__logo" src="/brand/logo-green.png" width="1060" height="686" alt="The QED Room"></div>
     </div>
+    <svg class="hero__curve" viewBox="0 0 1440 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 28V14C240-4 480-4 720 12s480 18 720-2v18z"/></svg>
   </section>
 
   <section class="wrap section">
+    <a class="continue" href="/lessons/" data-continue hidden>
+      <span>
+        <span class="continue__label">Continue where you left off</span>
+        <span class="continue__title" data-continue-title></span>
+        <span class="continue__chapter" data-continue-chapter></span>
+      </span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
     <h2 class="section__title">{grade.title}</h2>
     <p class="meta">{grade.chapters.length} chapters · {grade.lessons.length} lessons · following the MATATAG curriculum</p>
     <div class="period-grid">
       {grade.periods.map((period) => (
-        <a class="period-card" href={period.url}>
+        <a class={`period-card period-color-${period.number}`} href={period.url}>
+          <svg class="period-art" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+            {period.number === 1 && <>
+              <path class="period-art__fill" d="M6 54h52L40 12z"/>
+              <path class="period-art__line" d="M6 54h52L40 12zM22 54a16 16 0 0 0-5-11"/>
+            </>}
+            {period.number === 2 && <>
+              <path class="period-art__fill" d="M8 34h12v22H8zM26 18h12v38H26zM44 8h12v48H44z"/>
+              <path class="period-art__line" d="M8 34h12v22H8zM26 18h12v38H26zM44 8h12v48H44zM4 56h56"/>
+            </>}
+            {period.number === 3 && <>
+              <circle class="period-art__fill" cx="36" cy="28" r="20"/>
+              <path class="period-art__line" d="M8 4v52h52M56 28a20 20 0 1 1-40 0 20 20 0 0 1 40 0z"/>
+            </>}
+            {period.number === 4 && <>
+              <circle class="period-art__fill" cx="32" cy="32" r="26"/>
+              <path class="period-art__line" d="M58 32a26 26 0 1 1-26-26 26 26 0 0 1 26 26zM32 32V6M32 32l22 14"/>
+            </>}
+          </svg>
           <h3 class="card__title">Period {period.number}</h3>
           <ul>
             {period.chapters.map((chapter) => <li>{chapter.title}</li>)}

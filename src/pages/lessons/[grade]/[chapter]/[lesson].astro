@@ -38,13 +38,21 @@ const description = lesson.entry?.data.description ?? `Coming soon: ${lesson.tit
         <a href={chapter.url}>{chapter.title}</a>
       </nav>
 
-      <article class="prose">
+      <article class="prose" data-lesson={lesson.id} data-live={String(lesson.live)} data-title={lesson.title} data-chapter={chapter.title}>
         <div class="tags">
           <span class="tag tag--grade">Lesson {index + 1} of {chapter.lessons.length}</span>
           <span class="tag tag--topic">{chapter.title}</span>
           {!lesson.live && <span class="tag tag--soon">Coming soon</span>}
         </div>
         <h1>{lesson.title}</h1>
+
+        {lesson.videoId && (
+          <div class="video" data-video={lesson.videoId} data-video-title={lesson.title}>
+            <button class="video__play" type="button" aria-label={`Play video: ${lesson.title}`}>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+        )}
 
         {Content ? (
           <>
@@ -64,6 +72,13 @@ const description = lesson.entry?.data.description ?? `Coming soon: ${lesson.tit
           </>
         )}
 
+        {lesson.live && (
+          <div class="lesson-done">
+            <button class="btn btn--secondary" type="button" data-mark-done aria-pressed="false">Mark as done</button>
+            <p data-done-message hidden>Great work finishing this lesson! Kaya mo 'yan!</p>
+          </div>
+        )}
+
         <div class="pager actions">
           <a class="btn btn--secondary" href={previous.url}>Back: {previous.title}</a>
           {next && <a class="btn btn--primary" href={next.url}>Next: {next.title}</a>}
@@ -71,4 +86,7 @@ const description = lesson.entry?.data.description ?? `Coming soon: ${lesson.tit
       </article>
     </div>
   </div>
+  <script>
+    import '../../../../scripts/lesson.js';
+  </script>
 </Base>
