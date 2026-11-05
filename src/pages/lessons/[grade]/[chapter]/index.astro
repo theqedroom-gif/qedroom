@@ -20,7 +20,7 @@ const lead = chapter.entry?.data.lead ?? `In this chapter, you will learn about 
 const description = chapter.entry?.data.description ?? `${chapter.title} lessons for ${grade.title} math, following the DepEd MATATAG curriculum.`;
 const first = chapter.lessons[0];
 ---
-<Base title={chapter.title} description={description}>
+<Base title={chapter.title} description={description} lang={chapter.entry ? 'fil' : 'en'}>
   <div class="wrap layout">
     <CourseOutline grade={grade} chapter={chapter} />
     <div class="layout__main">

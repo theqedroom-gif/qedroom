@@ -4,7 +4,7 @@ description: Extend right-triangle trigonometry to oblique triangles with the La
 lead: Right-triangle trigonometry only gets us so far. In this chapter, we learn to solve triangles that have no right angle.
 ---
 
-In basic trigonometry, we learned how to find the trigonometric ratios of a right triangle.
+Sa basic trigonometry, nalaman natin kung paano kinukuha ang trigonometric ratios sa isang right triangle. Natutunan natin ang mga formula na
 
 <figure class="diagram">
 
@@ -16,8 +16,6 @@ Figure 1.1: Right triangle $ABC$
 
 </figcaption>
 </figure>
-
-We used these formulas:
 
 <div class="working">
 
@@ -31,17 +29,17 @@ $$
 
 </div>
 
-We also learned how to work with angles greater than $90^{\circ}$. In this chapter, we extend those lessons to solve oblique triangles. But before we begin, let's find out what an oblique triangle is.
+Natutunan din natin kung paano kumuha ng mga angles na lampas pa sa $90^{\circ}$. Sa chapter na ito, itutuloy natin ang pag-aaral ng trigonometry at susubukan nating i-extend ang mga naunang lessons para magsolve ng oblique triangles. Pero bago tayo magsimula, alamin muna natin kung ano ang oblique triangles.
 
 <div class="callout callout--key">
 
-**Oblique triangle:** a triangle that does not contain a $90^{\circ}$ angle.
+**Oblique triangle:** A triangle that does not contain any $90^{\circ}$ angle.
 
 </div>
 
-In other words, it is not a right triangle. We defined the trigonometric ratios using right triangles, so we can't simply use them on oblique triangles. This is where the Law of Sines and the Law of Cosines come in, and they are the focus of this chapter. We will define both laws, show how they are used and, most importantly, learn when to use each one.
+Ibig sabihin, hindi ito isang right triangle. Dahil ang mga trigonometric ratios ay na-define natin gamit ang right triangles, hindi natin maaaring gamitin ng basta-basta ang mga ito sa oblique triangles. Dito na papasok ang tinatawag na Law of Sines at ang Law of Cosines. Ito ang magiging focus ng chapter na ito. Una, i-define natin ang Law of Sines at Law of Cosines. Ipapakita natin kung paano sila ginagamit, at importante sa lahat, kelan sila ginagamit.
 
-At the end of each section, we will answer part of our chapter problem. By the end of the chapter, we will have solved all of it.
+Sa dulo ng bawat sections, sasagutin natin ang ilang parts ng ating chapter question. Sa pinakadulo ng ating chapter ay tuluyan na nating sasagutin ang ating chapter question.
 
 <section class="panel">
 <div class="panel__label">Chapter problem</div>
